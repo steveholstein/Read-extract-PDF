@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+mplename# -*- coding: utf-8 -*-
 """
 Created on Sat Feb 24 08:28:57 2024
 
@@ -14,7 +14,7 @@ import PyPDF2
 
 
 
-pdf_file = open("RPDF data files\Campbell+Elliott_Tatum.pdf", "rb")
+pdf_file = open("RPDF data files\examplename.pdf", "rb")
 pdf_reader = PyPDF2.PdfReader(pdf_file)
 metadata = pdf_reader.metadata
 
