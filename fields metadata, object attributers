@@ -62,7 +62,7 @@ print("\n**Object representation:**")
 print(pdf_reader)  # Print the object itself
 
 if __name__ == "__main__":
-    pdf_reader = PyPDF2.PdfReader("RPDF data files\Campbell+Elliott_Tatum.pdf")
+    pdf_reader = PyPDF2.PdfReader("RPDF data files\examplename.pdf")
     list_all_pdf_reader_attributes(pdf_reader)
 
 
