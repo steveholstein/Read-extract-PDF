@@ -1,0 +1,84 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Feb 24 08:28:57 2024
+
+@author: hello
+"""
+
+#Code to list all the available properties in the `metadata` object:
+    
+  
+
+import PyPDF2
+
+
+
+
+pdf_file = open("RPDF data files\Campbell+Elliott_Tatum.pdf", "rb")
+pdf_reader = PyPDF2.PdfReader(pdf_file)
+metadata = pdf_reader.metadata
+
+# List all the available properties in the metadata object
+for prop in metadata:
+    print(prop + ":", metadata[prop])
+
+
+
+
+
+if pdf_reader.get_fields():
+        fields = pdf_reader.get_fields()
+        for field, value in fields.items():
+            print("Field:", field)
+            print("Value:", value)
+else:
+        print("No form fields found.")
+
+pdf_file.close()
+
+
+
+def list_all_pdf_reader_attributes(pdf_reader):
+    """
+# =============================================================================
+#     Prints all fields, properties, and attributes of a `pdf_reader` object.
+# 
+#     Args:
+#         pdf_reader (PyPDF2.PdfReader): The PDF reader object.
+#     """
+# 
+# =============================================================================
+print("**Public attributes:**")
+for attr in dir(pdf_reader):
+        if not attr.startswith("_"):  # Skip private attributes
+            print(f"- {attr}")
+
+print("\n**Public methods:**")
+for method in dir(pdf_reader):
+        if not method.startswith("_"):  # Skip private methods
+            print(f"- {method}()")
+
+print("\n**Object representation:**")
+print(pdf_reader)  # Print the object itself
+
+if __name__ == "__main__":
+    pdf_reader = PyPDF2.PdfReader("RPDF data files\Campbell+Elliott_Tatum.pdf")
+    list_all_pdf_reader_attributes(pdf_reader)
+
+
+list_all_pdf_reader_attributes(pdf_reader)
+
+
+
+
+pdf_file.close()
+
+num_pages = len(pdf_reader.pages)
+print("Number of Pages:", num_pages)
+
+
+
+
+
+
+
